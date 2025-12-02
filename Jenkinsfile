@@ -1,21 +1,19 @@
 pipeline {
     agent any
 
-    tools {
-        // Make sure 'jdk-21' matches the name you configured in Jenkins Global Tool Configuration
-        jdk 'jdk-21' 
-    }
-
+    // Bagian 'tools' dihapus karena tidak wajib untuk PHP sederhana
+    
     stages {
-        stage('Build') {
+        stage('Checkout Code') {
             steps {
-                echo 'Building...'
-                // Add your build command here, e.g., sh './mvnw clean package'
+                checkout scm
             }
         }
-        stage('Test') {
+        
+        stage('Run PHP Script') {
             steps {
-                echo 'Testing...'
+                // Menjalankan perintah PHP
+                powershell 'php index.php' 
             }
         }
     }
