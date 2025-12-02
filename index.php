@@ -1,4 +1,4 @@
 <?php
-echo "Halo! Pipeline Jenkins berhasil menjalankan script PHP ini.";
+echo "Halo saya febri.";
 echo "\n"; // Baris baru
 ?>
